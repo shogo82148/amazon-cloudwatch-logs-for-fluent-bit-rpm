@@ -21,6 +21,11 @@ amazonlinux2: amazonlinux2.build
 	rm -rf tmp Dockerfile
 	docker images | grep -q $(IMAGE_NAME) && docker rmi $(IMAGE_NAME) || true
 
+.PHONY: bintray
+bintray:
+	./scripts/build_bintray_json.bash \
+		amazon-cloudwatch-logs-for-fluent-bit
+
 clean:
 	rm -rf *.build.bak *.build bintray tmp Dockerfile
 	docker images | grep -q $(IMAGE_NAME)-amazonlinux2 && docker rmi $(IMAGE_NAME)-amazonlinux2 || true
