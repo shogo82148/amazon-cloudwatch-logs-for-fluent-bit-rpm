@@ -1,0 +1,12 @@
+dist: xenial
+
+services:
+  - docker
+
+language: c
+
+env:
+  - TARGET_DISTRIBUTION=amazonlinux2
+
+script:
+  - make "$TARGET_DISTRIBUTION"
