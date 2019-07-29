@@ -1,7 +1,7 @@
 Summary: A Fluent Bit output plugin for CloudWatch Logs
 Name: amazon-cloudwatch-logs-for-fluent-bit
 Version: 0.0.0
-Release: 1%{?dist}
+Release: 2%{?dist}
 URL: https://github.com/aws/amazon-cloudwatch-logs-for-fluent-bit
 License: Apache v2.0
 Group: Applications/File
@@ -16,7 +16,7 @@ A Fluent Bit output plugin for CloudWatch Logs
 %build
 rm -fr %{buildroot}
 git clone --depth 10 https://github.com/aws/amazon-cloudwatch-logs-for-fluent-bit.git
-git -C amazon-cloudwatch-logs-for-fluent-bit checkout 6662a0978b77c2ade20b1d9e7082f0d84ab67173
+git -C amazon-cloudwatch-logs-for-fluent-bit checkout 5dcefed4096bf85b7fd22fbe0e1e589aa72a08df
 make -C amazon-cloudwatch-logs-for-fluent-bit release
 
 %install
@@ -31,3 +31,8 @@ rm -fr %{buildroot}
 %files
 %defattr(-,root,root,-)
 /etc/fluent-bit/plugins/cloudwatch.so
+
+%changelog
+
+* Tue Jul 30 2019 Ichinose Shogo <shogo82148@gmail.com> - 0.0.0-2
+- update to 5dcefe to 6662a0

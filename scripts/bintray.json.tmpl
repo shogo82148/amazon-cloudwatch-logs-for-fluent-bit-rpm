@@ -18,8 +18,8 @@
 
     "files": [
         {
-            "includePattern": "amazonlinux2.build/(@PKG_NAME@-@PKG_VERSION@.*\\.rpm)",
-            "uploadPattern": "amazonlinux2/2/x86_64/$1",
+            "includePattern": "amazonlinux2.build/RPMS/([^/]*)/(@PKG_NAME@-@PKG_VERSION@.*\\.rpm)",
+            "uploadPattern": "amazonlinux2/2/$1/$2",
             "matrixParams": { "override": 1 }
         }
     ],
