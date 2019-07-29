@@ -21,18 +21,21 @@ make -C amazon-cloudwatch-logs-for-fluent-bit release
 
 %install
 
-mkdir -p %{buildroot}/etc/fluent-bit/plugins
+mkdir -p %{buildroot}/usr/local/lib/fluent-bit
 install -m 644 -p amazon-cloudwatch-logs-for-fluent-bit/bin/cloudwatch.so \
-    %{buildroot}/etc/fluent-bit/plugins/cloudwatch.so
+    %{buildroot}/usr/local/lib/fluent-bit/cloudwatch.so
 
 %clean
 rm -fr %{buildroot}
 
 %files
 %defattr(-,root,root,-)
-/etc/fluent-bit/plugins/cloudwatch.so
+/usr/local/lib/fluent-bit/cloudwatch.so
 
 %changelog
+
+* Tue Jul 30 2019 Ichinose Shogo <shogo82148@gmail.com> - 0.0.0-3
+- fix install path
 
 * Tue Jul 30 2019 Ichinose Shogo <shogo82148@gmail.com> - 0.0.0-2
 - update to 5dcefe to 6662a0
