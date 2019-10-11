@@ -3,7 +3,7 @@ ENV HOME /
 RUN yum update -y && yum install -y rpm-build redhat-rpm-config rpmdevtools make gcc-c++ tar gzip git
 
 # Install Golang
-ENV GOLANG_VERSION="1.12.7" GOLANG_SHA256="66d83bfb5a9ede000e33c6579a91a29e6b101829ad41fffb5c5bb6c900e109d9"
+ENV GOLANG_VERSION="1.13.1" GOLANG_SHA256="94f874037b82ea5353f4061e543681a0e79657f787437974214629af8407d124"
 RUN curl -sSL "https://storage.googleapis.com/golang/go$GOLANG_VERSION.linux-amd64.tar.gz" -o /tmp/golang.tar.gz \
     && echo "$GOLANG_SHA256 /tmp/golang.tar.gz" | sha256sum -c - \
     && tar -xzf /tmp/golang.tar.gz -C /usr/local \
