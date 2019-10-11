@@ -38,4 +38,4 @@ rm -fr %{buildroot}
 - fix install path
 
 * Tue Jul 30 2019 Ichinose Shogo <shogo82148@gmail.com> - 0.0.0-2
-- update to 5dcefe to 6662a0
+- update to 5dcefe from 6662a0
