@@ -33,6 +33,10 @@ rm -fr %{buildroot}
 /usr/local/lib/fluent-bit/cloudwatch.so
 
 %changelog
+* Sat Jul 18 2020 Ichinose Shogo <shogo82148@gmail.com> - 1.3.0-1
+- bump up to v1.3.0
+- update Go to 1.14.6
+
 * Mon Mar 23 2020 Ichinose Shogo <shogo82148@gmail.com> - 1.2.0-2
 - update Go to 1.14.1
 
