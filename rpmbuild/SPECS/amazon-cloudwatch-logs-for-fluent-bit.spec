@@ -17,6 +17,13 @@ A Fluent Bit output plugin for CloudWatch Logs
 rm -fr %{buildroot}
 git clone https://github.com/aws/amazon-cloudwatch-logs-for-fluent-bit.git
 git -C amazon-cloudwatch-logs-for-fluent-bit checkout -f "v1.4.1"
+
+# workaround for go.mod: checksum mismatch
+# verifying github.com/aws/amazon-kinesis-firehose-for-fluent-bit@v1.4.1/go.mod: checksum mismatch
+# 	downloaded: h1:LV5vSM9R3vODyhZM9jdUWLThms4Chcio46SUff6XfBY=
+# 	go.sum:     h1:2hixxBh6Xygvxe6x/PSUTphh8dZ0WptVty98ftZIhAU=
+rm amazon-cloudwatch-logs-for-fluent-bit/go.sum
+
 make -C amazon-cloudwatch-logs-for-fluent-bit release
 
 %install
