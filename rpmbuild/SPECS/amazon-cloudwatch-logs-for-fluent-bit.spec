@@ -1,6 +1,6 @@
 Summary: A Fluent Bit output plugin for CloudWatch Logs
 Name: amazon-cloudwatch-logs-for-fluent-bit
-Version: 1.5.0
+Version: 1.6.0
 Release: 1%{?dist}
 URL: https://github.com/aws/amazon-cloudwatch-logs-for-fluent-bit
 License: Apache v2.0
@@ -16,7 +16,7 @@ A Fluent Bit output plugin for CloudWatch Logs
 %build
 rm -fr %{buildroot}
 git clone https://github.com/aws/amazon-cloudwatch-logs-for-fluent-bit.git
-git -C amazon-cloudwatch-logs-for-fluent-bit checkout -f "v1.5.0"
+git -C amazon-cloudwatch-logs-for-fluent-bit checkout -f "v1.6.0"
 
 # workaround for go.mod: checksum mismatch
 # verifying github.com/aws/amazon-kinesis-firehose-for-fluent-bit@v1.4.1/go.mod: checksum mismatch
@@ -40,7 +40,10 @@ rm -fr %{buildroot}
 /usr/local/lib/fluent-bit/cloudwatch.so
 
 %changelog
-* Wed Dec 16 2020 Ichinose Shogo <shogo82148@gmail.com> - 1.4.1-1
+* Wed Dec 16 2020 Ichinose Shogo <shogo82148@gmail.com> - 1.6.0-1
+- bump up to v1.6.0
+
+* Wed Dec 16 2020 Ichinose Shogo <shogo82148@gmail.com> - 1.5.0-1
 - bump up to v1.5.0
 - update Go to 1.15.6
 
